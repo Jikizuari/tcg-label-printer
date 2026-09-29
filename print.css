@@ -1,0 +1,157 @@
+@page {
+	size: A4 portrait;
+	margin: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+}
+
+body {
+	background: #e6e6e6;
+}
+
+.toolbar {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 12px 16px;
+	background: #1d2b4f;
+	color: #fff;
+	font-size: 14px;
+}
+
+.toolbar-text {
+	flex: 1;
+}
+
+.toolbar button {
+	padding: 8px 14px;
+	border: 0;
+	border-radius: 4px;
+	background: #fff;
+	color: #1d2b4f;
+	font: inherit;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.toolbar button.primary {
+	background: #4caf50;
+	color: #fff;
+}
+
+.sheets {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+	padding: 16px;
+}
+
+.page {
+	position: relative;
+	width: 210mm;
+	height: 297mm;
+	overflow: hidden;
+	background: #fff;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+}
+
+.slot,
+.label {
+	position: absolute;
+}
+
+.slot {
+	border: 0.1mm dashed #ccc;
+	border-radius: 1mm;
+}
+
+.label {
+	display: flex;
+	gap: 0.8mm;
+	padding: 0.8mm;
+}
+
+.label-bar {
+	flex: 0 0 2.4mm;
+	border-radius: 0.4mm;
+}
+
+.label-body {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	justify-content: space-between;
+	min-width: 0;
+}
+
+.label-price {
+	font-size: 4.4mm;
+	font-weight: bold;
+	line-height: 1;
+	text-align: right;
+	white-space: nowrap;
+	font-variant-numeric: tabular-nums;
+}
+
+.label-price-long {
+	font-size: 3.4mm;
+}
+
+.label-footer {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 0.6mm;
+	font-size: 2.2mm;
+	line-height: 1;
+	white-space: nowrap;
+}
+
+.label-condition {
+	font-weight: bold;
+}
+
+@media print {
+	body {
+		background: none;
+	}
+
+	.toolbar,
+	.slot {
+		display: none;
+	}
+
+	.page-calibration .slot {
+		display: block;
+		border: 0.2mm solid #000;
+	}
+
+	.sheets {
+		display: block;
+		padding: 0;
+	}
+
+	.page {
+		box-shadow: none;
+		break-after: page;
+	}
+
+	.page:last-child {
+		break-after: auto;
+	}
+}

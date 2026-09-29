@@ -1,0 +1,122 @@
+* {
+	box-sizing: border-box;
+}
+
+[hidden] {
+	display: none !important;
+}
+
+body {
+	width: 300px;
+	margin: 0;
+	font-family: system-ui, -apple-system, sans-serif;
+	font-size: 14px;
+	color: #1d2b4f;
+	background: #fff;
+}
+
+.popup {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 16px;
+}
+
+.stack {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.popup h1 {
+	margin: 0;
+	font-size: 16px;
+}
+
+.summary {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.count {
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.month {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.swatch {
+	width: 14px;
+	height: 14px;
+	border-radius: 3px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.warning {
+	padding: 8px;
+	border-radius: 4px;
+	background: #fff4e0;
+	color: #8a4b00;
+}
+
+.error {
+	padding: 8px;
+	border-radius: 4px;
+	background: #fdecea;
+	color: #a31515;
+}
+
+.start {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.start input {
+	width: 64px;
+	padding: 4px 6px;
+	font: inherit;
+}
+
+.hint {
+	font-size: 12px;
+	color: #667;
+}
+
+button {
+	padding: 6px 10px;
+	border: 1px solid #1d2b4f;
+	border-radius: 4px;
+	background: #fff;
+	color: #1d2b4f;
+	font: inherit;
+	cursor: pointer;
+}
+
+button.primary {
+	padding: 10px;
+	border-color: #1d2b4f;
+	background: #1d2b4f;
+	color: #fff;
+	font-weight: bold;
+}
+
+button:disabled {
+	opacity: 0.5;
+	cursor: default;
+}
+
+.footer {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.footer a {
+	font-size: 12px;
+	color: #667;
+}

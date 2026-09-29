@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="nl">
+<head>
+	<meta charset="utf-8">
+	<title>TCG Label Printer – instellingen</title>
+	<link rel="stylesheet" href="options.css">
+</head>
+<body>
+	<main class="options">
+		<h1>TCG Label Printer</h1>
+
+		<section class="group">
+			<h2>Maandkleuren</h2>
+			<p class="hint">Kies kleuren met elk een eigen naam (rood, oranje, …) zodat je ze niet hoeft te vergelijken.</p>
+			<div class="colors" id="colors"></div>
+		</section>
+
+		<section class="group">
+			<h2>Uitlijning</h2>
+			<p class="hint">Print de uitlijntest op gewoon papier en leg die tegen een etikettenvel. Schuif bij met positief = naar rechts / naar beneden.</p>
+			<div class="offsets">
+				<label>Horizontaal (mm) <input type="number" id="offsetX" step="0.1"></label>
+				<label>Verticaal (mm) <input type="number" id="offsetY" step="0.1"></label>
+			</div>
+			<div class="actions">
+				<button type="button" id="calibrate">Uitlijntest printen</button>
+			</div>
+		</section>
+
+		<section class="group">
+			<h2>Vel</h2>
+			<p class="hint">Volgende print begint bij label <strong id="next"></strong>.</p>
+			<div class="actions">
+				<button type="button" id="new-sheet">Nieuw vel (terug naar label 1)</button>
+			</div>
+		</section>
+
+		<div class="actions">
+			<button type="button" id="reset">Standaardinstellingen herstellen</button>
+			<span class="saved" id="saved" hidden>Opgeslagen</span>
+		</div>
+	</main>
+	<script type="module" src="options.js"></script>
+</body>
+</html>

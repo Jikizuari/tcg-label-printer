@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="nl">
+<head>
+	<meta charset="utf-8">
+	<title>Preview</title>
+	<link rel="stylesheet" href="../print.css">
+</head>
+<body>
+	<!-- Serve the project root over http and open /test/preview.html?start=200 -->
+	<main class="sheets" id="sheets"></main>
+	<script type="module">
+		import { renderLabels } from '../src/render.js';
+		import { roundPrice, formatPrice } from '../src/pricing.js';
+		import { monthCode } from '../src/months.js';
+		import { DEFAULT_SETTINGS } from '../src/settings.js';
+
+		const cards = [
+			{ price: 4.92, quantity: 43, condition: 'NM' },
+			{ price: 3.24, quantity: 33, condition: 'EX' },
+			{ price: 0.1, quantity: 3, condition: 'GD' },
+			{ price: 12.3, quantity: 2, condition: 'LP' },
+			{ price: 125.8, quantity: 1, condition: 'MT' },
+		];
+		const params = new URLSearchParams(location.search);
+		const month = monthCode(params.has('month') ? new Date(2026, Number(params.get('month')) - 1, 1) : new Date());
+		renderLabels(document.getElementById('sheets'), {
+			labels: cards.flatMap((card) => Array(card.quantity).fill({
+				price: formatPrice(roundPrice(card.price)),
+				condition: card.condition,
+			})),
+			start: Number(params.get('start')) || 1,
+			monthText: month.text,
+			color: DEFAULT_SETTINGS.colors[month.index],
+		}, { x: 0, y: 0 });
+	</script>
+</body>
+</html>

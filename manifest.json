@@ -1,0 +1,23 @@
+{
+	"manifest_version": 3,
+	"name": "TCG Label Printer",
+	"version": "1.0.0",
+	"description": "Print prijslabels (HERMA 17,8 × 10 mm) voor de kaarten in TCG PowerTools.",
+	"action": {
+		"default_popup": "popup.html",
+		"default_title": "Labels printen",
+		"default_icon": {
+			"16": "icons/icon-16.png",
+			"32": "icons/icon-32.png",
+			"48": "icons/icon-48.png"
+		}
+	},
+	"icons": {
+		"16": "icons/icon-16.png",
+		"32": "icons/icon-32.png",
+		"48": "icons/icon-48.png",
+		"128": "icons/icon-128.png"
+	},
+	"options_page": "options.html",
+	"permissions": ["activeTab", "scripting", "storage"]
+}

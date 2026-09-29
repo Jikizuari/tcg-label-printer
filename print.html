@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="nl">
+<head>
+	<meta charset="utf-8">
+	<title>Labels printen</title>
+	<link rel="stylesheet" href="print.css">
+</head>
+<body>
+	<div class="toolbar">
+		<span class="toolbar-text" id="status">Bezig met laden…</span>
+		<button type="button" id="reprint" hidden>Opnieuw printen</button>
+		<button type="button" id="cancel" hidden>Niet gelukt</button>
+		<button type="button" class="primary" id="confirm" hidden>Gelukt</button>
+	</div>
+	<main class="sheets" id="sheets"></main>
+	<script type="module" src="print.js"></script>
+</body>
+</html>
